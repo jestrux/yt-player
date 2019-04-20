@@ -4,7 +4,13 @@
 
 import path from 'path';
 import webpack from 'webpack';
+import fs from 'fs';
+import dotenv from 'dotenv';
 import { dependencies } from '../package.json';
+
+const data = fs.readFileSync('.env', { encoding: 'utf8' });
+const buffer = Buffer.from(data);
+const flags = dotenv.parse(buffer);
 
 export default {
   externals: [...Object.keys(dependencies || {})],
@@ -39,7 +45,8 @@ export default {
 
   plugins: [
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production'
+      NODE_ENV: 'production',
+      ...flags
     }),
 
     new webpack.NamedModulesPlugin()

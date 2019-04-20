@@ -2,7 +2,58 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Hello Electron React!</title>
+    <title>Youtuber</title>
+    <style>
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        /* background-color: #fff; */
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+
+      .app-bar,
+      body > *:not(input):not(.no-drag) {
+        -webkit-app-region: drag;
+      }
+
+      #analyser svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        opacity: 0.4;
+      }
+
+      #analyser h1 {
+        display: none;
+      }
+
+      #analyser path {
+        stroke-linecap: square;
+        stroke: white;
+        stroke-width: 0.5px;
+      }
+
+      #roots {
+        background: #fcfcfc;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+      }
+
+      #analyser {
+        display: none;
+      }
+    </style>
     <script>
       (function() {
         if (!process.env.HOT) {
