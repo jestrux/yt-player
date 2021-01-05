@@ -235,7 +235,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.3.2",
     "core-js": "2",
     "devtron": "^1.4.0",
